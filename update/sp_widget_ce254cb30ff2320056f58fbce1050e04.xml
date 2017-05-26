@@ -12,7 +12,7 @@
         <description/>
         <docs/>
         <field_list/>
-        <has_preview>false</has_preview>
+        <has_preview>true</has_preview>
         <id>rtt_search_input</id>
         <internal>false</internal>
         <link/>
@@ -23,6 +23,16 @@
         <script><![CDATA[(function() {
   /* populate the 'data' object */
   /* e.g., data.table = $sp.getValue('table'); */
+	data.RTTFormulas = [];
+	var target = new GlideRecord('x_98145_rtt_formulas');
+	target.query('Initiative Profiles','=', 1);   // Issue the query to the database to get all records
+while (target.next()) {   
+  // add code here to process the incident record
+	var forumula = {};
+	formula.RTTDocumentID = target.number.toString();
+	formula.InitiativeProfile = target.initiative_profile.toString();
+	data.RTTFormulas.push(formula);
+}
 
 })();]]></script>
         <servicenow>false</servicenow>
@@ -31,7 +41,7 @@
         <sys_created_on>2017-05-24 14:55:06</sys_created_on>
         <sys_customer_update>true</sys_customer_update>
         <sys_id>ce254cb30ff2320056f58fbce1050e04</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>RTT Search Input</sys_name>
         <sys_package display_value="RTT" source="x_98145_rtt">0dfceae30f32320056f58fbce1050e54</sys_package>
         <sys_policy/>
@@ -39,9 +49,44 @@
         <sys_scope display_value="RTT">0dfceae30f32320056f58fbce1050e54</sys_scope>
         <sys_update_name>sp_widget_ce254cb30ff2320056f58fbce1050e04</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-24 14:55:49</sys_updated_on>
+        <sys_updated_on>2017-05-26 14:58:18</sys_updated_on>
         <template><![CDATA[<div>
 This is my First Servicennow Widget.
+  <table border="1">
+    <tr>
+      <td>Original IPC</td>
+      <td></td><td></td><td></td>
+      <td>NEW IPC</td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+      <td><select id="filterOriginalIPC">
+  <option value="equals">Equals</option>
+  <option value="contains">Contains</option>
+  <option value="beginswith">BeginsWith</option>
+  <option value="notequals">Not Equals</option>
+</select></td>
+      <td><input type="text" id="txtOriginalIPC"/></td><td><select id="operatorOriginalIPC">
+  <option value="and">And</option>
+      <option value="or">Or</option></select></td><td></td>
+      <td><select id="filterNewIPC">
+  <option value="equals">Equals</option>
+  <option value="contains">Contains</option>
+  <option value="beginswith">BeginsWith</option>
+  <option value="notequals">Not Equals</option>
+</select></td>
+      <td><input type="text" id="txtNewIPC"/></td><td><select id="operatorNewIPC">
+  <option value="and">And</option>
+      <option value="or">Or</option></select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td><td></td><td></td>
+      <td></td><td></td><td><input type="submit" value="Submit"></td>
+    </tr>
+    <tr>
+  </table>
+  <div id="resultTable">
+  </div>
 </div>]]></template>
     </sp_widget>
 </record_update>
