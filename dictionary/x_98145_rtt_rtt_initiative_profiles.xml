@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="RTT Initiative Profiles" max_length="40" name="x_98145_rtt_rtt_initiative_profiles" type="collection">
+        <element display="true" label="Title" mandatory="true" max_length="256" name="title" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_98145_rtt.admin" name="x_98145_rtt.admin">40906d9c0f03320056f58fbce1050ee0</contains>
+        <role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-26 10:54:55</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>5b5125dc0f03320056f58fbce1050ee9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_98145_rtt.admin.admin</sys_name>
+        <sys_package display_value="RTT" source="x_98145_rtt">0dfceae30f32320056f58fbce1050e54</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="RTT">0dfceae30f32320056f58fbce1050e54</sys_scope>
+        <sys_update_name>sys_user_role_contains_5b5125dc0f03320056f58fbce1050ee9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-26 10:54:55</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>
